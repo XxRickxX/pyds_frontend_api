@@ -14,7 +14,7 @@ st.write(iris_df.describe())
 
 # interactive selection of x and y columns
 st.header("Interactive plot")
-x = st.text_input("Enter x-axis column: ")
-y = st.text_input("Enter y-axis column: ")
+x = st.selectbox("Enter x-axis column: ",options = iris_df.columns)
+y = st.selectbox("Enter y-axis column: ",options = iris_df.columns)
 
 st.scatter_chart(x=x, y=y, color="species", data=iris_df)
