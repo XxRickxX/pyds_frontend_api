@@ -256,7 +256,7 @@ def sync_city_name() -> None:
 
 
 if "city_main" not in st.session_state:
-    st.session_state.city_main = "Seoul"
+    st.session_state.city_main = "Stuttgart"
 
 if "city_copy" not in st.session_state:
     st.session_state.city_copy = st.session_state.city_main
@@ -297,25 +297,32 @@ def reset_demo_values() -> None:
     st.session_state.click_count = 0
     st.session_state.lower_name = "streamlit"
     st.session_state.upper_name = "STREAMLIT"
-    st.session_state.city_main = "Seoul"
-    st.session_state.city_copy = "Seoul"
+    st.session_state.city_main = "Stuttgart"
+    st.session_state.city_copy = "Stuttgart"
 
 
-if st.button("Reset demo values", key="reset_demo_values_button"):
-    reset_demo_values()
-    st.rerun()
+st.button("Reset demo values", key="reset_demo_values_button", on_click=reset_demo_values)
 
 st.code(
     '''def reset_demo_values() -> None:
     st.session_state.click_count = 0
     st.session_state.lower_name = "streamlit"
     st.session_state.upper_name = "STREAMLIT"
-    st.session_state.city_main = "Seoul"
-    st.session_state.city_copy = "Seoul"
+    st.session_state.city_main = "Stuttgart"
+    st.session_state.city_copy = "Stuttgart"
 
-if st.button("Reset demo values", key="reset_demo_values_button"):
-    reset_demo_values()
-    st.rerun()''',
+
+st.button("Reset demo values", key="reset_demo_values_button", on_click=reset_demo_values)
+
+st.code(
+    '''def reset_demo_values() -> None:
+    st.session_state.click_count = 0
+    st.session_state.lower_name = "streamlit"
+    st.session_state.upper_name = "STREAMLIT"
+    st.session_state.city_main = "Stuttgart"
+    st.session_state.city_copy = "Stuttgart"
+
+st.button("Reset demo values", key="reset_demo_values_button", on_click=reset_demo_values)''',
     language="python",
 )
 
